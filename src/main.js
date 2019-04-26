@@ -3,13 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
+import {Button} from 'mint-ui'
+
+//加载mockServer 、webpack的入口文件main.js
+import './mock/mockServer'
+
+// 注册全局组件标签
+Vue.component(Button.name,Button);//<mt-button>
 
 
-
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  router,//用上路由
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store//用上store
 });
